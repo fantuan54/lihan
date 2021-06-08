@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button id="btn">按钮</button>
+    <script>
+        //声明一个回调函数 可以接收响应后的数据
+        function fn(data){
+            console.log(data)
+            console.log('拿到数据时候的操作写在这里')
+        }
+        let btn=document.getElementById('btn')
+        btn.onclick=function(){
+            let script=document .createElement('script')
+            script.src='http://127.0.0.1:5000/test?callback=fn'
+            document.body.appendChild(script) //不懂
+
+            console.log(1)
+            console.log(2)
+
+        }
+    </script>
+</body>
+</html>
